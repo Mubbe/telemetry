@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cvkvtb25je5tc"]
+
+[ext_resource type="Script" uid="uid://bqrnfaij1fkwu" path="res://Menu.cs" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://bgwvyghg667m3" path="res://TelemetryVisualizer.cs" id="2_mae5d"]
+[ext_resource type="Script" uid="uid://dkvwhxxxd6a8u" path="res://MouseTelemetry.cs" id="2_ouk20"]
+
+[node name="Menu" type="Node3D" unique_id=118879818 node_paths=PackedStringArray("highscore")]
+script = ExtResource("1_lti8b")
+highscore = NodePath("Control/VBoxContainer/HighScore")
+
+[node name="Control" type="Control" parent="." unique_id=1920924327]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = -323.0
+offset_right = 577.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1079821851]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.99997
+offset_top = -135.5
+offset_right = 121.55762
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3286207, 2.403729)
+
+[node name="Play" type="Button" parent="Control/VBoxContainer" unique_id=541824506]
+layout_mode = 2
+text = "Play"
+
+[node name="Options" type="Button" parent="Control/VBoxContainer" unique_id=1855955154]
+layout_mode = 2
+text = "Options"
+
+[node name="Exit" type="Button" parent="Control/VBoxContainer" unique_id=1747042327]
+layout_mode = 2
+text = "Exit"
+
+[node name="HighScore" type="Label" parent="Control/VBoxContainer" unique_id=688326143]
+layout_mode = 2
+text = "HighScore:"
+
+[node name="TelemetryVisualizer" type="Control" parent="Control" unique_id=222829692]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_mae5d")
+
+[node name="MouseTelemetry" type="Node" parent="." unique_id=1959774439]
+script = ExtResource("2_ouk20")
+
+[connection signal="pressed" from="Control/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

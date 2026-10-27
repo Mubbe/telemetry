@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://qo4ymoa2rdnr" path="res://LevelManager.cs" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cvkvtb25je5tc" path="res://menu.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dpjh6oxspteri" path="res://Options.tscn" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://elst0xn32iil" path="res://Game.tscn" id="4_272bh"]
+
+[node name="Main" type="Node3D"]
+
+[node name="LevelManager" type="Node" parent="."]
+script = ExtResource("1_1bvp3")
+Menu = ExtResource("2_lquwl")
+Options = ExtResource("3_7mycd")
+Game = ExtResource("4_272bh")
